@@ -52,5 +52,23 @@ namespace WpfApp5
             db.SaveChanges();
  
         }
+
+        private void Rules_Click(object sender, RoutedEventArgs e)
+        {
+            string rules = "first";
+            User_Rules user_Rules = new User_Rules();
+            user_Rules.title = rules;
+            db.User_Rules.Add(user_Rules);
+            db.SaveChanges();
+        }
+
+        private void Rules_View_Click(object sender, RoutedEventArgs e)
+        {
+            var alltypes = db.User_Rules;
+            foreach (var element in alltypes)
+            {
+                Console.WriteLine($"ID: {element.id} TYPE: {element.title}");
+            }
+        }
     }
 }

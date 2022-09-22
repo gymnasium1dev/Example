@@ -13,6 +13,9 @@
             <TextBox Margin="10 10 10 10" x:Name="type_tytle"></TextBox>
             <Button HorizontalAlignment="Right" x:Name="add_type" Content="Add type" Click="add_type_Click"></Button>
         </StackPanel>
-        
+        <Button Content="Add_rules" Name="Rules_Add" Click="Rules_Click"></Button>
+        <Button Content="View" Name="Rules_View" Click="Rules_View_Click"></Button>
     </StackPanel>
+  
+    
 </Window>
