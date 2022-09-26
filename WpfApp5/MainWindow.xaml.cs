@@ -67,8 +67,72 @@ namespace WpfApp5
             var alltypes = db.User_Rules;
             foreach (var element in alltypes)
             {
-                Console.WriteLine($"ID: {element.id} TYPE: {element.title}");
+                Console.WriteLine($"ID: {element.id} TYPE: {element.title}"); 
             }
+        }
+
+        private void Add_new_user_Click(object sender, RoutedEventArgs e)
+        {
+            Users user = new Users();
+            user.user_name = User_Name.Text;
+            user.password = "123";
+            user.type_id = 1;
+            user.rules_id = 1;
+            user.User_Rules = db.User_Rules.ToList()[0];
+            db.Users.Add(user);
+            db.SaveChanges();
+            MessageBox.Show("Успешно!");
+        }
+
+        private void Print_Users_Click(object sender, RoutedEventArgs e)
+        {
+            List<Users> users = db.Users.ToList();
+            foreach (var element in users)
+            {
+                Console.WriteLine($"ID: {element.id} NAme: {element.user_name} {element.User_Rules.title}");
+            }
+        }
+
+        private void Get_User_Rule_Click(object sender, RoutedEventArgs e)
+        {
+            Users user = db.Users.First();
+            User_Rules rool = db.User_Rules.Where((element)=> element.id == user.rules_id).First();
+            User_Rule.Content = $"{user.user_name} {rool.title}";
+        }
+
+        private void Get2_Click(object sender, RoutedEventArgs e)
+        {
+            Users user = db.Users.First();
+            List<User_types> types = db.User_types.ToList();
+            for (int i = 0; i<types.Count; i++ )
+            {
+                if(user.type_id == types[i].id)
+                {
+                    forse.Content = $"{user.user_name} {types[i].title}";
+                }
+
+            }
+        }
+
+        private void pirint_Click(object sender, RoutedEventArgs e)
+        {
+            Users user = db.Users.First();
+            List<User_types> types = db.User_types.ToList();
+            for (int i = 0; i < types.Count; i++)
+            {
+                if (user.type_id == types[i].id)
+                { 
+                    Console.WriteLine($"{user.user_name}");                    
+                }
+
+            }
+        }
+
+        private void Get_Rool_Click(object sender, RoutedEventArgs e)
+        {
+            Users user = db.Users.First();
+            List<User_types> types = db.User_types.ToList();
+
         }
     }
 }

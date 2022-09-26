@@ -15,6 +15,19 @@
         </StackPanel>
         <Button Content="Add_rules" Name="Rules_Add" Click="Rules_Click"></Button>
         <Button Content="View" Name="Rules_View" Click="Rules_View_Click"></Button>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="User_Name" Width="100" ></TextBox>
+            <Button x:Name="Add_new_user" Click="Add_new_user_Click" Content="Add user"></Button>
+        </StackPanel>
+        <Button x:Name="Print_Users" Content="Print Users" Click="Print_Users_Click"></Button>
+        <StackPanel Orientation="Horizontal"></StackPanel>
+        <Label x:Name="User_Rule"></Label>
+        <Button Content='Get' x:Name="Get_User_Rule" Click="Get_User_Rule_Click"></Button>
+        <Label x:Name="forse"></Label>
+        <Button Content ="Get2" x:Name="Get2" Click="Get2_Click"> </Button>
+        <Button Content="Get3" x:Name="pirint" Click="pirint_Click"></Button>
+        <Label x:Name="Getuserrool"></Label>
+        <Button Content="Get4" x:Name ="Get_Rool"  Click="Get_Rool_Click"></Button>
     </StackPanel>
   
     
